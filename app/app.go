@@ -79,7 +79,7 @@ func (a *App) Play() {
 				log.Print(err)
 			}
 			if res.StatusCode != http.StatusOK {
-				log.Print(*turn.PlayCard)
+				//log.Print(*turn.PlayCard)
 				body, _ := ioutil.ReadAll(res.Body)
 				log.Print("Error posting turn: " + strconv.Itoa(res.StatusCode) + "-> " + string(body))
 			}
