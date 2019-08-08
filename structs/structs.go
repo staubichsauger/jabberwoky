@@ -24,6 +24,9 @@ func (gs *GameStatus) DoTurn() (turn Turn) {
 		case "":
 			possible = append(possible, c)
 		}
+		if c.Value == gs.DiscardedCard.Value && numbers[gs.DiscardedCard.Value] > 0 && numbers[gs.DiscardedCard.Value] < 10 {
+			possible = append(possible, c)
+		}
 		if c.Color != "" {
 			switch c.Color {
 			case "RED":
@@ -96,8 +99,8 @@ var numbers = map[string]int {
 	"SEVEN": 7,
 	"EIGHT": 8,
 	"NINE": 9,
-	"REVERSE": 10,
-	"DRAW_TWO": -1,
+	"REVERSE": 0,
+	"DRAW_TWO": 10,
 	"SKIP": 0,
 	"WILD": -2,
 	"WILD_DRAW_FOUR": -3,
