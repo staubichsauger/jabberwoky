@@ -10,8 +10,8 @@ import (
 )
 
 func main() {
-	host := flag.String("host", "localhost", "uno server host")
-	port := flag.Int("port", 3000, "uno server port")
+	host := flag.String("host", "localhost", "ugo server host")
+	port := flag.Int("port", 3000, "ugo server port")
 	numPlayers := flag.Int("players", 2, "number of clients to spawn")
 	flag.Parse()
 
